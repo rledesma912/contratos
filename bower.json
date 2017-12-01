@@ -1,0 +1,23 @@
+{
+  "name": "contratos",
+  "description": "angular2, contratos, version1",
+  "main": "index.htm",
+  "authors": [
+    "rledesma"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular2",
+    "contratos",
+    "inmo"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
