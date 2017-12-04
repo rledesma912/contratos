@@ -1,33 +1,112 @@
 
+<div class="row">
+  <div class="col-sm-1">&nbsp;</div>
+  <div class="col-sm-11">
+    <h3>Contratos</h3>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-sm-1">&nbsp;</div>
 
-  <div class="formulario col-sm-6" data-example-id="frmparrafo">
-    <form>
-      <div class="form-group">
-        <label for="txtnombre" >Nombre</label>
-        <input type="text" class="form-control" id="txtnombre" aria-describedby="nombrehelp" placeholder="Ingrese un nombre">
+  <div class="col-sm-7" data-example-id="frmparrafo">
+    <form class="form formulario">
+      <div class="row">
+        <div class="form-group col-sm-4">
+          <label for="exampleSelect1">Estado:</label>
+          <select class="form-control" id="exampleSelect1">
+            <option>Todos</option>
+            <option>Activos</option>
+            <option>Inactivos</option>
+          </select>
+        </div>
+
+        <div class="form-group col-sm-8">
+          <label for="txtnombre" >Filtrar por nombe de p&aacute;rrafo</label>
+          <input type="text" class="form-control" id="txtnombre" aria-describedby="nombrehelp" placeholder="Texto a filtrar">
+        </div>
       </div>
-      <div class="form-group">
-        <label for="txtdescripcion">Descripci&oacute;n</label>
-        <textarea class="form-control" id="txtdescripcion" rows="3"></textarea>
+
+      <div class="row">
+        <div class="form-group col-sm-12">
+          <label for="exampleSelect1">Filtrar por tipos de p&aacute;rrafos:</label>
+          <select class="form-control" id="exampleSelect1">
+            <option>Todos</option>
+            <option>Activos</option>
+            <option>Inactivos</option>
+          </select>
+        </div>
       </div>
-      <div class="form-check">
-      <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" id="checkboxSuccess" value="option1">
-        Checkbox with success
-      </label>
-    </div>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" id="checkboxWarning" value="option1">
-        Checkbox with warning
-      </label>
-    </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+
+      <div class="row">
+
+
+        <div class="form-check col-sm-4" >
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" id="checkboxSuccess" value="option1">
+            Checkbox with success
+          </label>
+        </div>
+        <div class="form-check col-sm-4">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" id="checkboxWarning" value="option1">
+            Checkbox with warning
+          </label>
+        </div>
+
+        <div class="form-check col-sm-4">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" id="checkboxWarning" value="option1">
+            Checkbox with warning
+          </label>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-primary float-right">Nuevo p&aacute;rrafo</button>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12 ">
+
+          <div class="parrafoscontainer">
+
+
+            <div class="card text-center">
+              <div class="card-header">
+                <ul class="nav nav-pills card-header-pills float-right">
+                  <li class="nav-item">
+                    <span class="badge badge-info" style="margin-top:1em;">32</span>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Modificar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Eliminar</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-block">
+                <h4 class="card-title">Título de párrafo</h4>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
     </form>
   </div>
 
-  <div class="col-sm-5">&nbsp;</div>
+  <div class="col-sm-4">&nbsp;</div>
 </div>

@@ -1,5 +1,15 @@
 
 
 .formulario {
+  padding: 1em;
+  background-color: #f7f7f9;
+}
 
+.parrafoscontainer{
+  margin-top: 1em;
+  background-color: #fff;
+  border: 1px solid #DEDEE0;
+  padding: 1em;
+  height:350px;
+  overflow-y: scroll;
 }
