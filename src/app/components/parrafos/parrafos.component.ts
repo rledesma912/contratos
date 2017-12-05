@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsultaService } from '../../services/consulta.service';
 
 @Component({
   selector: 'app-parrafos',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class ParrafosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _srvConsulta:ConsultaService) {
+
+  }
 
   ngOnInit() {
   }

@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 //Rutas
 import { APP_ROUTING } from './app.routes';
 
 
 //Servicios
+import { ConsultaService } from './services/consulta.service';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -28,7 +28,9 @@ import { AboutComponent } from './components/about/about.component';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    ConsultaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
