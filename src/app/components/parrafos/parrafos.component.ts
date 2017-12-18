@@ -14,6 +14,7 @@ export class ParrafosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._srvConsulta.getPosts();
   }
 
 }
