@@ -14,9 +14,11 @@ export class ConsultaService {
   getPosts(){
     let url = "https://jsonplaceholder.typicode.com/posts";
 
+    /*
     let headers = new HttpHeaders({
       'authorization':'sss'
     })
+    */
 
     this.http.get(url)
         .subscribe(resp => {
