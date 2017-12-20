@@ -1,43 +1,77 @@
 
-<div class="row">
-  <div class="col-sm-1">&nbsp;</div>
 
-  <div class="formulario col-sm-6" data-example-id="frmparrafo">
-    <form>
-      <div class="form-group">
-        <label for="txtnombre" >Nombre</label>
-        <input type="text" class="form-control" id="txtnombre" aria-describedby="nombrehelp" placeholder="Ingrese un nombre">
+<!-- Modal -->
+<div class="modal fade"
+      id="exampleModalLong"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Alta de p&aacute;rrafo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="form-group">
-        <label for="txtdescripcion">Descripci&oacute;n</label>
-        <textarea class="form-control" id="txtdescripcion" rows="3"></textarea>
+      <div class="modal-body">
+        <div class="formulario" data-example-id="frmparrafo">
+          <form>
+            <div class="form-group">
+              <label for="txtnombre" >Nombre</label>
+              <input type="text" class="form-control" id="txtnombre" aria-describedby="nombrehelp" placeholder="Ingrese un nombre">
+            </div>
+            <div class="form-group">
+              <label for="txtdescripcion">Descripci&oacute;n</label>
+              <textarea class="form-control" id="txtdescripcion" rows="3"></textarea>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="checkboxSuccess" value="option1">
+                Checkbox with success
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="checkboxWarning" value="option1">
+                Checkbox with warning
+              </label>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" id="checkboxSuccess" value="option1">
-          Checkbox with success
-        </label>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
       </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" id="checkboxWarning" value="option1">
-          Checkbox with warning
-        </label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Buscar parrafo...">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Ir</button>
+      </span>
+    </div>
   </div>
 </div>
 <br>
 <div class="row">
-  <div class="col-sm-1">&nbsp;</div>
-  <div class="col-sm-3">
-    <label for="termino">lalala</label>
-    <input type="text" name="txtbusqueda" value="" class="form-control">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <button class="btn btn-primary"
+              type="button"
+              data-toggle="modal"
+              data-target="#exampleModalLong">Nuevo</button>
+    </div>
   </div>
-  <div class="col-sm-8">&nbsp;</div>
 </div>
 <br>
+
 <div class="row">
   <div class="col-sm-1">&nbsp;</div>
   <div class="col-sm-8">
@@ -45,18 +79,19 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Title</th>
+          <th>Body</th>
         </tr>
       </thead>
       <tbody>
 
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+        <tr class="puntero"
+            *ngFor="let item of _srvConsulta.parrafos"
+            (click)="alertar(item.title)">
+          <th scope="row" >{{ item.id }}</th>
+          <td>{{ item.title }}</td>
+          <td>{{ item.body }}</td>
+          <td></td>
         </tr>
       </tbody>
     </table>

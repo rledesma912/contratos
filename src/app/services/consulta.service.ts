@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ConsultaService {
+
+  private parrafos:any[];
 
   //api de prueba: https://jsonplaceholder.typicode.com/posts
   constructor(public http:HttpClient) {
@@ -10,6 +13,16 @@ export class ConsultaService {
     console.log("Servicio listo para usar");
 
     }
+
+    getParrafos(){
+      let url = "https://jsonplaceholder.typicode.com/posts";
+      return this.http.get(url)
+          //.map( resp => 'carrito');
+          .map( (resp:any) => {
+            this.parrafos = resp;
+            return this.parrafos;
+        });
+  }
 
   getPosts(){
     let url = "https://jsonplaceholder.typicode.com/posts";
@@ -20,11 +33,15 @@ export class ConsultaService {
     })
     */
 
-    this.http.get(url)
+    /*
+      //no es ideal tener subscribe en el servicio.
+      this.http.get(url)
         .subscribe(resp => {
-          console.log(resp)
+          console.log(resp[0].title);
         });
+    */
 
+      return this.http.get(url);
   }
 
 

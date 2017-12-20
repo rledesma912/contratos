@@ -9,15 +9,23 @@ import { ConsultaService } from '../../services/consulta.service';
 
 export class ParrafosComponent implements OnInit {
 
+  private parr1:any[];
+
   constructor(private _srvConsulta:ConsultaService) {  }
 
   ngOnInit() {
 
-    return this._srvConsulta.getPosts()
-        //.subscribe( parr => {
-          //console.log(parr)
-        //});
+    //this._srvConsulta.getPosts();
 
+    this._srvConsulta.getParrafos().subscribe(resp => {
+      console.log(resp);
+    });
+
+  }
+
+  alertar(mensaje:string){
+    console.log(mensaje);
+    '#exampleModalLong'.modal('show');
   }
 
 }
