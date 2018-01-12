@@ -1,0 +1,28 @@
+
+
+<div class="formulario" data-example-id="frmparrafo">
+  <h4>Entidad post: </h4>
+  <form>
+    <div class="form-group">
+      <label for="txtnombre" >Nombre</label>
+      <input type="text" class="form-control" id="txtnombre" aria-describedby="nombrehelp" placeholder="Ingrese un nombre"
+        value="{{ entParrafo.title }}">
+    </div>
+    <div class="form-group">
+      <label for="txtdescripcion">Descripci&oacute;n</label>
+      <textarea class="form-control" id="txtdescripcion" rows="3">{{ entParrafo.body }}</textarea>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" id="checkboxSuccess" value="option1">
+        Checkbox with success
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" id="checkboxWarning" value="option1">
+        Checkbox with warning
+      </label>
+    </div>
+  </form>
+</div>

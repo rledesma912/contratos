@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultaService } from '../../services/consulta.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-parrafos',
@@ -11,21 +13,20 @@ export class ParrafosComponent implements OnInit {
 
   private parr1:any[];
 
-  constructor(private _srvConsulta:ConsultaService) {  }
+  constructor(private _router: Router,
+              private _srvConsulta:ConsultaService) {  }
 
   ngOnInit() {
 
     //this._srvConsulta.getPosts();
-
     this._srvConsulta.getParrafos().subscribe(resp => {
-      console.log(resp);
+      //console.log(resp);
     });
 
   }
 
-  alertar(mensaje:string){
-    console.log(mensaje);
-    '#exampleModalLong'.modal('show');
+  editarRegistro(idParrafo:number){
+    this._router.navigate(['/parrafo', idParrafo]);
   }
 
 }

@@ -6,22 +6,34 @@ import 'rxjs/add/operator/map';
 export class ConsultaService {
 
   private parrafos:any[];
+  private entidadParrafo:any;
+  private urlAPI: string = 'https://jsonplaceholder.typicode.com/';
 
   //api de prueba: https://jsonplaceholder.typicode.com/posts
   constructor(public http:HttpClient) {
 
-    console.log("Servicio listo para usar");
+    console.log('Servicio listo para usar');
 
     }
 
     getParrafos(){
-      let url = "https://jsonplaceholder.typicode.com/posts";
+      let url = `${this.urlAPI}posts`;
       return this.http.get(url)
           //.map( resp => 'carrito');
           .map( (resp:any) => {
             this.parrafos = resp;
             return this.parrafos;
         });
+  }
+
+  getParrafoPorId(idParrafo:number){
+    let url = `${this.urlAPI}posts/${idParrafo}`;
+
+    return this.http.get(url)
+        .map( (resp:any) => {
+          this.entidadParrafo = resp;
+          return this.entidadParrafo;
+      });
   }
 
   getPosts(){
